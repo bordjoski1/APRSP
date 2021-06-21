@@ -14,7 +14,7 @@ function Nav () {
                     <li className="nav-item dropdown"><a className="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
                         <div className="dropdown-menu" role="menu"><a className="dropdown-item" role="presentation" href="#">First Item</a><a className="dropdown-item" role="presentation" href="#">Second Item</a><a className="dropdown-item" role="presentation" href="#">Third Item</a></div>
                     </li>
-                </ul><span className="navbar-text actions"> <a className="login" href={ReactRoutes.LOGIN}>Log In</a><a className="btn btn-light action-button" role="button" href="#" style={{backgroundColor: "rgb(79,84,84)"}}>Sign Up</a></span></div>
+                </ul><span className="navbar-text actions"> <a className="login" href={ReactRoutes.LOGIN}>Log In</a><a className="btn btn-light action-button" role="button" href={ReactRoutes.REGISTER} style={{backgroundColor: "rgb(79,84,84)"}}>Sign Up</a></span></div>
         </div>
     </nav>
     )

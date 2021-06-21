@@ -1,6 +1,9 @@
-import * as firebase from "firebase";  
+import app from 'firebase/app';
+import 'firebase/auth';
+import firebase from 'firebase';
+
   
-var firebaseConfig = {
+var config = {
     apiKey: "AIzaSyA3DtRJ86tq89m5vQASpWKPjWw1MWNXu_Q",
     authDomain: "market-24e58.firebaseapp.com",
     projectId: "market-24e58",
@@ -10,7 +13,26 @@ var firebaseConfig = {
     measurementId: "G-F0RLT26WYZ"
   }; 
   
-// Initialize Firebase  
-var fireDb = firebase.initializeApp(firebaseConfig);  
+  // class Firebase {
+  //   constructor() {
+  //     app.initializeApp(config);
+
+  //     this.auth = app.auth();
+  //   }
+
+  //   doCreateUserWithEmailAndPassword = (email, password) =>
+  //   this.auth.createUserWithEmailAndPassword(email, password);
+
+  //   doSignInWithEmailAndPassword = (email, password) =>
+  //   this.auth.signInWithEmailAndPassword(email, password);
+
+  //   doSignOut = () => this.auth.signOut();
+
+  // }
+
+const firebaseApp=firebase.initializeApp(config);
+const db=firebase.firestore();
+
+export default db;
   
-export default fireDb.database().ref(); 
+// export default Firebase

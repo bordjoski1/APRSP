@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactRoutes from '../config/ReactRoutes';
 
 function Categories() {
     return (
@@ -14,7 +15,7 @@ function Categories() {
                     <p className="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a className="action" href="#"><i className="fa fa-arrow-circle-right"></i></a></div>
                 <div
                     className="col-sm-6 col-md-4 item"><a href="#"><img className="img-fluid" src="assets/img/categories/meat.jpg"/></a>
-                    <h3 className="name">Mesni proizvodi</h3>
+                    <a className="name" href={ReactRoutes.MEATS}>Mesni proizvodi</a>
                     <p className="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a className="action" href="#"><i className="fa fa-arrow-circle-right"></i></a></div>
             <div
                 className="col-sm-6 col-md-4 item"><a href="#"><img className="img-fluid" src="assets/img/categories/drinks.jpg"/></a>

@@ -5,12 +5,16 @@ import Home from './pages/Home';
 import Nav from './components/Nav'
 import Login from './pages/Login'
 import Register from './pages/Regster';
+import Meats from './pages/Meats'
 
 function App() {
   return (
     <div>
       <Nav/>
       <Switch>
+        <Route path={ReactRoutes.MEATS}>
+          <Meats/>
+        </Route>
         <Route path={ReactRoutes.LOGIN}>
           <Login/>
         </Route>
