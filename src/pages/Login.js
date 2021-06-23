@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactRoutes from '../config/ReactRoutes';
+import LoginService from '../services/LoginService';
 
 function Login() {
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+
+    function login(e) {
+        e.preventDefault()
+        LoginService.login(email, password)
+        .then(console.log)
+    }
+
     return (
         <div>
             <div className="simple-slider">
@@ -15,9 +27,9 @@ function Login() {
                 <form method="post" style={{opacity: "0.88", filter: "blur(0px)"}}>
                     <h2 className="sr-only">Login Form</h2>
                     <div className="illustration"><i className="icon ion-ios-navigate" style={{color: "rgb(42,41,41)"}}></i></div>
-                    <div className="form-group"><input className="form-control" type="email" name="email" placeholder="Email" style={{backgroundColor: "rgb(197,198,200)"}}/></div>
-                    <div className="form-group"><input className="form-control" type="password" name="password" placeholder="Password" style={{backgroundColor: "rgb(197,198,200)"}}/></div>
-                    <div className="form-group"><button className="btn btn-primary btn-block" type="submit" >Log In</button></div><a className="forgot" href={ReactRoutes.REGISTER}>Don't have an account? Sign Up</a></form>
+                    <div className="form-group"><input onChange={e => setEmail(e.target.value)} className="form-control" type="email" name="email" placeholder="Email" style={{backgroundColor: "rgb(197,198,200)"}}/></div>
+                    <div className="form-group"><input onChange={e => setPassword(e.target.value)} className="form-control" type="password" name="password" placeholder="Password" style={{backgroundColor: "rgb(197,198,200)"}}/></div>
+                    <div className="form-group"><button onClick={login} className="btn btn-primary btn-block" type="submit" >Log In</button></div><a className="forgot" href={ReactRoutes.REGISTER}>Don't have an account? Sign Up</a></form>
             </div>
         </div>
     )

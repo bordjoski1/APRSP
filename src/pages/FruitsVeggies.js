@@ -3,6 +3,7 @@ import UpdateProduct from "../components/Modals/UpdateProduct";
 import AddProduct from "../components/Modals/AddProduct";
 import DeleteProduct from "../components/Modals/DeleteProduct";
 import FruitsVeggiesService from "../services/FruitsVeggiesService";
+import UserUtility from "../utility/UserUtility";
 
 function FruitsVeggies() {
     const [fruitsVeggies, setFruitsVeggies] = useState([]);
@@ -18,7 +19,7 @@ function FruitsVeggies() {
             <div className="intro">
                 <h2 className="text-center" style={{color:" rgb(132,135,137)"}}>Voce i povrce</h2>
                 <p className="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
-                <p className="text-center" style={{marginTop:"5px"}}><AddProduct collection={"fruitsVeggies"}/></p>
+                <p className="text-center" style={{marginTop:"5px"}}>{UserUtility.isLoggedIn()? <AddProduct collection={"fruitsVeggies"}/>: <span></span>}</p>
             </div>
             <div className="row people">
                 {fruitsVeggies.map(item => {
@@ -31,11 +32,15 @@ function FruitsVeggies() {
                             <div className="social">
                                 {/* <button className="btn btn-success" type="button">Izmeni</button> */}
                                 <a href="#"></a>
-                                <UpdateProduct product={item}
+                                {UserUtility.isLoggedIn()? 
+                                    <div>
+                                        <UpdateProduct product={item}
                                                 collection={'fruitsVeggies'} />
 
-                                <DeleteProduct product={item}
+                                        <DeleteProduct product={item}
                                                 collection={'fruitsVeggies'}/>
+                                    </div>: 
+                                    <span></span>}
                                 {/* <button className="btn btn-danger" type="button">Izbrisi</button> */}
                                 </div>
                         </div>

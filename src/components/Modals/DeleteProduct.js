@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import db from "../../firebase";
+import {db} from "../../firebase";
 
 function DeleteProduct ({product, collection}) {
     const [show, setShow] = useState(false);

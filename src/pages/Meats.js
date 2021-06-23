@@ -3,6 +3,7 @@ import UpdateProduct from "../components/Modals/UpdateProduct";
 import AddProduct from "../components/Modals/AddProduct";
 import DeleteProduct from "../components/Modals/DeleteProduct";
 import { MeatsService } from "../services/MeatsService";
+import UserUtility from '../utility/UserUtility'
 
 function Meats() {
     const [meats, setMeats] = useState([]);
@@ -18,7 +19,7 @@ function Meats() {
             <div className="intro">
                 <h2 className="text-center" style={{color:" rgb(132,135,137)"}}>Mesni proizvodi</h2>
                 <p className="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
-                <p className="text-center" style={{marginTop:"5px"}}><AddProduct collection={"meats"}/></p>
+                <p className="text-center" style={{marginTop:"5px"}}>{UserUtility.isLoggedIn()? <AddProduct collection={"meats"}/>: <span></span>}</p>
             </div>
             <div className="row people">
                 {meats.map(meat => {
@@ -30,12 +31,17 @@ function Meats() {
                             <p className="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
                             <div className="social">
                                 {/* <button className="btn btn-success" type="button">Izmeni</button> */}
-                                <a href="#"></a>
-                                <UpdateProduct product={meat}
+                                {UserUtility.isLoggedIn()? 
+                                    <div>
+                                        <UpdateProduct product={meat}
                                                 collection={'meats'} />
 
-                                <DeleteProduct product={meat}
+                                        <DeleteProduct product={meat}
                                                 collection={'meats'}/>
+                                    </div>: 
+                                    <span></span>}
+                                <a href="#"></a>
+                                
                                 {/* <button className="btn btn-danger" type="button">Izbrisi</button> */}
                                 </div>
                         </div>
