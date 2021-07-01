@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
 import {db} from "../../firebase";
 
 
@@ -14,8 +13,6 @@ function UpdateProduct({product, collection}) {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-    let history = useHistory()
 
     function updateProduct() {
         

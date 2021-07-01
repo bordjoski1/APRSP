@@ -36,7 +36,7 @@ function Login() {
                     <div className="illustration"><i className="icon ion-ios-navigate" style={{color: "rgb(42,41,41)"}}></i></div>
                     <div className="form-group"><input onChange={e => setEmail(e.target.value)} className="form-control" type="email" name="email" placeholder="Email" style={{backgroundColor: "rgb(197,198,200)"}}/></div>
                     <div className="form-group"><input onChange={e => setPassword(e.target.value)} className="form-control" type="password" name="password" placeholder="Password" style={{backgroundColor: "rgb(197,198,200)"}}/></div>
-                    <p style={{color:"red"}}>{errorMessage!=""? errorMessage: ""}</p>
+                    <p style={{color:"red"}}>{errorMessage!==""? errorMessage: ""}</p>
                     <div className="form-group"><button onClick={login} className="btn btn-primary btn-block" type="submit" >Log In</button></div><a className="forgot" href={ReactRoutes.REGISTER}>Don't have an account? Sign Up</a></form>
             </div>
         </div>

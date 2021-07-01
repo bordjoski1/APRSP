@@ -31,7 +31,7 @@ function Drinks() {
                             <p className="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
                             <div className="social">
                                 {/* <button className="btn btn-success" type="button">Izmeni</button> */}
-                                <a href="#"></a>
+                                <a href="/"></a>
                                 {UserUtility.isLoggedIn()? 
                                     <div>
                                         <UpdateProduct product={item}

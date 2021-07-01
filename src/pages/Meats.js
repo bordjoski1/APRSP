@@ -40,7 +40,7 @@ function Meats() {
                                                 collection={'meats'}/>
                                     </div>: 
                                     <span></span>}
-                                <a href="#"></a>
+                                <a href="/"></a>
                                 
                                 {/* <button className="btn btn-danger" type="button">Izbrisi</button> */}
                                 </div>

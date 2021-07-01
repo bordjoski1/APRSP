@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactRoutes from '../config/ReactRoutes';
 import {auth} from '../firebase';
 import UserUtility from '../utility/UserUtility';
@@ -10,7 +10,7 @@ function Nav () {
         if(UserUtility.isLoggedIn())
         {
             return (
-                <span className="navbar-text actions"> <a onClick={() => logOut()} className="login" href="#">Log Out</a></span>
+                <span className="navbar-text actions"> <a onClick={() => logOut()} className="login" href="/">Log Out</a></span>
             )
         }
         else {

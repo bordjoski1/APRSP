@@ -42,7 +42,7 @@ function Register() {
                     <div className="form-group"><input onChange={e=> setUsername(e.target.value)} className="form-control" type= "text" name="username" placeholder="Username"/></div>
                     <div className="form-group"><input onChange={e=> setEmail(e.target.value)} className="form-control" type="email" name="email" placeholder="Email" style={{backgroundColor: "rgb(197,198,200)"}}/></div>
                     <div className="form-group"><input onChange={e=> setPassword(e.target.value)} className="form-control" type="password" name="password" placeholder="Password" style={{backgroundColor: "rgb(197,198,200)"}}/></div>
-                    <p style={{color:"red"}}>{errorMessage!=""? errorMessage: ""}</p>
+                    <p style={{color:"red"}}>{errorMessage!==""? errorMessage: ""}</p>
                     <div className="form-group"><button className="btn btn-primary btn-block" type="submit" onClick={registration} >Register</button></div><a className="forgot" href={ReactRoutes.LOGIN}>Have an account? Sign In</a></form>
             </div>
         </div>
