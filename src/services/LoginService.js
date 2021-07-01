@@ -3,15 +3,20 @@ import ReactRoutes from '../config/ReactRoutes'
 
 export const LoginService = {
 
-    login: async (email, password) => {
-        const user = await auth.signInWithEmailAndPassword(email, password)
-        localStorage.setItem("UserID", JSON.stringify(user))
-
-        
-        window.location.href = ReactRoutes.HOME
-
-        return user      
-
+    login: (email, password) => {
+        return new Promise((resolve, recejt) => {
+            auth.signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                var user = userCredential.user;
+                localStorage.setItem("UserID", JSON.stringify(user))
+                window.location.href = ReactRoutes.HOME
+                resolve(user)
+              })
+              .catch((error) => {
+                var errorMessage = error.message;
+                recejt(errorMessage)
+              });
+        })
     }
 
 }
